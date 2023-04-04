@@ -684,7 +684,10 @@ debug/enter.o: ../Telegram/enter.cpp ../Telegram/enter.h \
 		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtSql/qsqlrelationaltablemodel.h \
 		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtSql/qsqltablemodel.h \
 		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtSql/qsqlresult.h \
-		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtSql/qtsqlversion.h
+		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtSql/qtsqlversion.h \
+		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QMessageBox \
+		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qmessagebox.h \
+		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\enter.o ..\Telegram\enter.cpp
 
 debug/main.o: ../Telegram/main.cpp ../Telegram/start.h \
