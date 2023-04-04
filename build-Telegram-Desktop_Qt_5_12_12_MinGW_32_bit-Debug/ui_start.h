@@ -34,10 +34,10 @@ public:
     QPushButton *S_Buttom;
     QFrame *S_FMainText;
     QGridLayout *gridLayout_2;
-    QLabel *S_MainText;
+    QLabel *S_Caption;
     QFrame *S_FCaptionText;
     QGridLayout *gridLayout_3;
-    QLabel *S_Caption;
+    QLabel *S_MainText;
     QFrame *S_FImage;
     QGridLayout *gridLayout_4;
     QMenuBar *menubar;
@@ -79,19 +79,20 @@ public:
 
         S_FMainText = new QFrame(centralwidget);
         S_FMainText->setObjectName(QString::fromUtf8("S_FMainText"));
+        S_FMainText->setFont(font);
         S_FMainText->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 247, 0,40);"));
         S_FMainText->setFrameShape(QFrame::StyledPanel);
         S_FMainText->setFrameShadow(QFrame::Raised);
         gridLayout_2 = new QGridLayout(S_FMainText);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        S_MainText = new QLabel(S_FMainText);
-        S_MainText->setObjectName(QString::fromUtf8("S_MainText"));
+        S_Caption = new QLabel(S_FMainText);
+        S_Caption->setObjectName(QString::fromUtf8("S_Caption"));
         QFont font1;
         font1.setPointSize(9);
-        S_MainText->setFont(font1);
-        S_MainText->setAlignment(Qt::AlignCenter);
+        S_Caption->setFont(font1);
+        S_Caption->setAlignment(Qt::AlignCenter);
 
-        gridLayout_2->addWidget(S_MainText, 0, 0, 1, 1);
+        gridLayout_2->addWidget(S_Caption, 0, 0, 1, 1);
 
 
         gridLayout_5->addWidget(S_FMainText, 1, 0, 1, 1);
@@ -103,19 +104,19 @@ public:
         S_FCaptionText->setFrameShadow(QFrame::Raised);
         gridLayout_3 = new QGridLayout(S_FCaptionText);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        S_Caption = new QLabel(S_FCaptionText);
-        S_Caption->setObjectName(QString::fromUtf8("S_Caption"));
+        S_MainText = new QLabel(S_FCaptionText);
+        S_MainText->setObjectName(QString::fromUtf8("S_MainText"));
         QFont font2;
-        font2.setFamily(QString::fromUtf8("Vladimir Script"));
+        font2.setFamily(QString::fromUtf8("Andalus"));
         font2.setPointSize(30);
         font2.setBold(true);
         font2.setItalic(true);
         font2.setWeight(75);
-        S_Caption->setFont(font2);
-        S_Caption->setStyleSheet(QString::fromUtf8(""));
-        S_Caption->setAlignment(Qt::AlignCenter);
+        S_MainText->setFont(font2);
+        S_MainText->setStyleSheet(QString::fromUtf8(""));
+        S_MainText->setAlignment(Qt::AlignCenter);
 
-        gridLayout_3->addWidget(S_Caption, 0, 0, 1, 1);
+        gridLayout_3->addWidget(S_MainText, 0, 0, 1, 1);
 
 
         gridLayout_5->addWidget(S_FCaptionText, 0, 0, 1, 1);
@@ -155,9 +156,9 @@ public:
     void retranslateUi(QMainWindow *Start)
     {
         Start->setWindowTitle(QApplication::translate("Start", "Start", nullptr));
-        S_Buttom->setText(QApplication::translate("Start", "Start", nullptr));
-        S_MainText->setText(QApplication::translate("Start", "Welcome to the best Telegram ! click start", nullptr));
-        S_Caption->setText(QApplication::translate("Start", "Telegram ", nullptr));
+        S_Buttom->setText(QApplication::translate("Start", "!\330\264\330\261\331\210\330\271", nullptr));
+        S_Caption->setText(QApplication::translate("Start", "\330\256\331\210\330\264 \330\242\331\205\330\257\333\214\330\257. \330\250\330\261\330\247\333\214 \330\264\330\261\331\210\330\271 \330\250\331\207\330\252\330\261\333\214\331\206 \330\252\330\254\330\261\330\250\331\207 \331\276\333\214\330\247\331\205\330\261\330\263\330\247\331\206\333\214 \332\251\331\204\333\214\332\251 \332\251\331\206\333\214\330\257!", nullptr));
+        S_MainText->setText(QApplication::translate("Start", "\330\252\331\204\332\257\330\261\330\247\331\205", nullptr));
     } // retranslateUi
 
 };

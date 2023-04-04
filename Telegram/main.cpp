@@ -3,6 +3,9 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QSqlDatabase>
+
+QSqlDatabase DB ;
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +20,12 @@ int main(int argc, char *argv[])
             break;
         }
     }
+    DB = QSqlDatabase::addDatabase("QSQLITE") ;
+    DB.setHostName("127.0.0.1") ;
+    DB.setPort(3306) ;
+    DB.setUserName("root") ;
+    DB.setPassword("AAAAAAAA") ;
+    DB.setDatabaseName("test0") ;
     Start w;
     w.show();
     return a.exec();

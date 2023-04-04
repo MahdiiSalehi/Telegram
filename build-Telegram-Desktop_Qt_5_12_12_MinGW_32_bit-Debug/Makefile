@@ -250,6 +250,7 @@ Makefile: ../Telegram/Telegram.pro D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/mkspec
 		../Telegram/Telegram.pro \
 		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/lib/Qt5Widgets.prl \
 		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/lib/Qt5Gui.prl \
+		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/lib/Qt5Sql.prl \
 		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/lib/Qt5Core.prl \
 		D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/lib/qtmain.prl
 	$(QMAKE) -o Makefile ..\Telegram\Telegram.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -440,6 +441,7 @@ D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/mkspecs/features/lex.prf:
 ../Telegram/Telegram.pro:
 D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/lib/Qt5Widgets.prl:
 D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/lib/Qt5Gui.prl:
+D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/lib/Qt5Sql.prl:
 D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/lib/Qt5Core.prl:
 D:/cpp/Qt/Qt5.12.12/5.12.12/mingw73_32/lib/qtmain.prl:
 qmake: FORCE

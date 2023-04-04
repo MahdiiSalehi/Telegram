@@ -2,5 +2,14 @@
     <qresource prefix="/new/prefix1">
         <file>S_Image.jpg</file>
     </qresource>
-    <qresource prefix="/new/prefix2"/>
+    <qresource prefix="/new/prefix2">
+        <file>EyeIcon(3.1).jpg</file>
+        <file>EyeIcon(3.0).jpg</file>
+    </qresource>
+    <qresource prefix="/new/prefix3">
+        <file>ReGenerate.jpg</file>
+    </qresource>
+    <qresource prefix="/new/prefix4">
+        <file>Captcha.jpg</file>
+    </qresource>
 </RCC>
