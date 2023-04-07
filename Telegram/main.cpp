@@ -1,11 +1,13 @@
 #include "start.h"
+#include "codetaeed.h"
 
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
 #include <QSqlDatabase>
+/*#include <MyLib/Newfolder/MyLib.h>
 
-QSqlDatabase DB ;
+MyQSqlDatabase db ;*/
 
 int main(int argc, char *argv[])
 {
@@ -20,12 +22,7 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    DB = QSqlDatabase::addDatabase("QSQLITE") ;
-    DB.setHostName("127.0.0.1") ;
-    DB.setPort(3306) ;
-    DB.setUserName("root") ;
-    DB.setPassword("AAAAAAAA") ;
-    DB.setDatabaseName("test0") ;
+    srand(time(NULL)) ;
     Start w;
     w.show();
     return a.exec();

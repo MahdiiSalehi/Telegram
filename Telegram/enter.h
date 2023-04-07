@@ -38,6 +38,12 @@ private slots:
 
     void on_E_EntRegButton_clicked();
 
+    void on_E_PhoneCodeNum_activated(int index);
+
+    void on_E_PhoneCodeRegion_activated(int index);
+
+    void on_E_PhoneLineEdit_textChanged(const QString &arg1);
+
 private:
     Ui::Enter *ui;
 };

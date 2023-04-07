@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>766</width>
+    <width>499</width>
     <height>600</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
+    <item row="0" column="1">
      <widget class="QFrame" name="E_Frame">
       <property name="maximumSize">
        <size>
@@ -211,6 +211,1767 @@
         </widget>
        </item>
        <item row="3" column="0">
+        <widget class="QSplitter" name="splitter_13">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <widget class="QSplitter" name="splitter_10">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QComboBox" name="E_PhoneCodeNum">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 234, 3);</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>۹۹۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۳۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۵۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۴۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۵۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۷۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۶۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۷۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۹۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۹۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۷۳۷۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۷۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۱۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۰۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۷۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۸۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۵۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۹۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۵۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱۸۰۹۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱۸۰۹۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۷۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۷۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۵۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۸۸۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۲۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۶۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۸۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۹۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۹۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۰۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۵۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۹۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۵۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۸۸۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱۸۶۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۷۳۶۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۱۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۷۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱۸۰۹۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۵۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۹۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۳۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۸۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱۷۶۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۵۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۷۰۹۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۴۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۶۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۶۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۸۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۲۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۸۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۸۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱۷۵۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱۷۸۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱۸۶۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۲۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۴۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۹۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۶۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۵۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱۴۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۶۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۶۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۶۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۳۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۵۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۷۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۵۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۷۳۳۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۷۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۸۵۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۳۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۸۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۸۵۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۸۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۰۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۴۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۵۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۶۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۶۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۴۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۲۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۵۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۱۴۷۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۰۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۷۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۲۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۴۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۴۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۸۵۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۶۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۶۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۵۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۳۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۱۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۶۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۵۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۶۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۲۳</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۱۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۷۶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۸۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۲۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۳۰</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۵۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۶۷۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۶۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۷۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۴۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۲۲۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۰۵</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۰۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۰۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۷۵۲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۵۸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۸۴</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۶۹</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۹۶۷</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۸۱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>۳۰</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QSplitter" name="splitter_9">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <widget class="QLineEdit" name="E_PhoneLineEdit">
+            <property name="minimumSize">
+             <size>
+              <width>250</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maxLength">
+             <number>10</number>
+            </property>
+           </widget>
+           <widget class="QLabel" name="E_PhoneLabel">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>شماره تلفن</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+         <widget class="QSplitter" name="splitter_11">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QComboBox" name="E_PhoneCodeRegion">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>160</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 234, 3);</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>آذربایجان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>آرژانتین</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>آفریقای جنوبی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>آفریقای مرکزی	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>آلبانی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>آلمان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>آمریکا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>آنگولا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اتریش	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اتیوپی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>بلاروس</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اردن</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ارمنستان	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اروگوئه</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اریتره</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ازبکستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اسپانیا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>استرالیا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>استونی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اطریش</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>افغانستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>الجزایر</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>السالوادور</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>امارات</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اندونزی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>انگلستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اوگاندا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اوکراین</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ایتالیا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ایران</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ایرلند</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>اکوادور</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ایسلند</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>باربادوس</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>باهاما</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>بحرین</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>برزیل</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>بروئنی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>بلژیک</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>بلغارستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>بنگلادش</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>بنین</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>بوتان	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>بوسنی و هرزگوین</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>بولیوی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>پاراگوئه</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>پاناما</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>پاکستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>پرتغال</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>پرو</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>پنال</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>تاجیکستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>تانزانیا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>تایلند</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>تایوان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ترینیداد</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ترکمنستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ترکیه</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>تونس</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>تونگا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>جامائیکا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>جزایر قناری	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>جزایرمارشال	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>چاد</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>چین</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>چک</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>دانمارک</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>دومینیکا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>رو آندا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>روسیه</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>رومانی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>زئیر</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>زامبیا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>زلاند نو</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>زیمبابوه</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ژاپن</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ساحل عاج</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ساموآ آمریکا	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ساموا غربی	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سریلانکا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سنت لوسیا	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سنت وینسنت</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سنت کیتس	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سنگاپور</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سنگال</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سوئد</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سوئیس</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سودان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سورینام</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سوریه</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سومالی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>سیشل</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>شیلی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>عربستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>عراق</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>عمان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>غنا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>فرانسه</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>فنلاند</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>فیجی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>فیلیپین</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>قبرس</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>قرقیزستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>قطر</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کامبوج</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کامرون</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کانادا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کره جنوبی	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کره شمالی	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کرواسی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کاستاریکا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کلمبیا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کنگو</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کنیا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کوبا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کومور</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>کویت</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>گابون</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>گامبیا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>گرجستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>گرنادا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>گواتمالا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>گوام</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>گینه</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>گینه استوایی	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>گینه بیسائو	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>لائوس</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>لبنان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>لسوتو</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>لهستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>لوکزامبورگ</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>لیبریا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>لیبی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مالاوی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مالت</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مالدیو</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مالزی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مالی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مجارستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مراکش</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مصر</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مغولستان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مقدونیه</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>موریتانی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>موریس</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>موزامبیک</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>میانمار</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>مکزیک</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>نائورا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>نامیبیا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>نپال</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>نروژ</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>نیجر</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>نیکاراگوئه	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>هائی تی	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>هلند</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>هند</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>هندوراس</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>هنگ کنگ	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>واتیکان</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ونزوئلا</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ویتنام</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>یمن جنوبی	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>یمن شمالی	</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>یوگسلاوی</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>یونان</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QLabel" name="E_PhoneEditingLabel">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+       <item row="4" column="0">
         <widget class="QFrame" name="E_FCaptcha">
          <property name="maximumSize">
           <size>
@@ -347,7 +2108,7 @@ p, li { white-space: pre-wrap; }
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="E_CaptchaRegenerate">
                <property name="maximumSize">
                 <size>
                  <width>30</width>
@@ -382,7 +2143,7 @@ p, li { white-space: pre-wrap; }
          </layout>
         </widget>
        </item>
-       <item row="4" column="0">
+       <item row="5" column="0">
         <widget class="QPushButton" name="E_EntRegButton">
          <property name="minimumSize">
           <size>
@@ -401,7 +2162,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
+       <item row="6" column="0">
         <widget class="QPushButton" name="E_GotoButton">
          <property name="minimumSize">
           <size>
@@ -424,7 +2185,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>766</width>
+     <width>499</width>
      <height>25</height>
     </rect>
    </property>

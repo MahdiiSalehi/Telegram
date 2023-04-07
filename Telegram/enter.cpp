@@ -1,17 +1,24 @@
 #include "enter.h"
 #include "ui_enter.h"
+#include "codetaeed.h"
+
 #include <QKeyEvent>
 #include <QSqlDatabase>
 #include <QtSql>
 #include <QMessageBox>
+#include <MyLib/Newfolder/MyLib.h>
 
 enum condition { Entering , Registering } ;
 condition con = Entering ;
 QString PersianLetters = "0123456789 ئاآبپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی" ;
 QString CaptchaCode ;
-extern QSqlDatabase DB ;
-bool CheckLineEditUsername ;
-bool CheckLineEditPassword ;
+bool CheckLineEditUsername = false ;
+bool CheckLineEditPassword = false ;
+bool CheckPhoneNum = false ;
+QString NewUserName ;
+QString NewPhoneNum ;
+QString NewPassword ;
+MyQSqlDatabase db ;
 
 Enter::Enter(QWidget *parent) :
     QMainWindow(parent),
@@ -28,11 +35,9 @@ Enter::Enter(QWidget *parent) :
     ui->E_P_VisableButton->setStyleSheet("image: url(:/new/prefix2/EyeIcon(3.1).jpg);") ;
     ui->E_P_LineEdit->setEchoMode(QLineEdit::Password) ;
     ui->E_FCaptchaImage->setDisabled(1) ;
-    if ( !DB.open() )
-    {
-        QMessageBox::information(this,"توجه","دیتابیس باز نشد","خروج") ;
-        this->~Enter() ;
-    }
+    ui->E_PhoneLineEdit->setValidator( new QIntValidator ) ;
+    ui->E_PhoneEditingLabel->setText("<ul><li>شماره تلفن حداقل باید پنج رقم باشد</li></ul>") ;
+    ui->E_PhoneEditingLabel->hide() ;
 }
 
 Enter::~Enter()
@@ -110,7 +115,10 @@ void Enter::on_E_U_LineEdit_textChanged(const QString &arg1)
       Only letters and numbers can be used ;
     */
     if ( arg1 == "" )
+    {
+        ui->E_ErrorUsernameLabel->hide() ;
         return ;
+    }
     bool sw = false ;
     QString str ("<ul>") ;
     if ( !CheckRuleSpeciaLetters (arg1) )
@@ -150,7 +158,10 @@ void Enter::on_E_P_LineEdit_textChanged(const QString &arg1)
       Characters other than letters and numbers should be used
     */
     if ( arg1 == "" )
+    {
+        ui->E_ErrorPasswordLabel->hide() ;
         return ;
+    }
     bool sw = false ;
     QString str ("<ul>") ;
     if ( CheckRuleSpeciaLetters(arg1) )
@@ -262,18 +273,88 @@ void Enter::on_E_EntRegButton_clicked()
         str += "<li>لطفا رمز عبور خود را اصلاح کنید.</li>" ;
         sw = true ;
     }
+    if ( !ui->E_PhoneLineEdit->text().length() )
+    {
+        str += "<li>لطفا شماره تلفن خود را وارد کنید.</li>" ;
+        sw = true ;
+    }
+    else if ( !CheckPhoneNum )
+    {
+        str += "<li>لطفا شماره تلفن خود را اصلاح کنید.</li>" ;
+        sw = true ;
+    }
     if ( !sw )
     {
-        if ( con == Entering )
+        if ( con == Registering )
         {
-            // search in database
-            //error or safhe code taeed
+            // check captcha code
+            if ( ui->E_CaptchaLineEdit->text() != CaptchaCode )
+            {
+                str += "<li>کد کپچای وارد شده تطابق ندارد!</li></ul>" ;
+                QMessageBox::information(this,"تکمیل اطلاعات",str,"باشه") ;
+                return ;
+            }
+            //search in database
+            bool Check_Existing_Username = db.Search( ui->E_U_LineEdit->text() , username ) ;
+            bool Check_Existing_PhoneNum = db.Search( ui->E_PhoneLineEdit->text() , phonenum ) ;
+            if ( !Check_Existing_Username && !Check_Existing_PhoneNum )
+            {
+                NewUserName = ui->E_U_LineEdit->text() ;
+                NewPhoneNum = ui->E_PhoneCodeNum->currentText() + "/" + ui->E_PhoneLineEdit->text() ;
+                NewPassword = ui->E_P_LineEdit->text() ;
+                // Go to safhe code taeed
+                CodeTaeed *w = new CodeTaeed() ;
+                w->show() ;
+                this->~Enter() ;
+            }
+            else
+            {
+                if ( Check_Existing_Username )
+                {
+                    str += "<li>کاربری با این نام کاربری از قبل وجود دارد!</li>" ;
+                }
+                if ( Check_Existing_PhoneNum )
+                {
+                    str += "<li>کاربری با این شماره تلفن از قبل وجود دارد!</li>" ;
+                }
+                str += "</ul>" ;
+                QMessageBox::information(this,"تکمیل اطلاعات",str,"باشه") ;
+            }
         }
         else
         {
-            // check captcha code
-            //error or search in database
-            //error or safhe code taeed
+            //search in database
+            QString UserName = ui->E_U_LineEdit->text() ;
+            if ( db.Search( UserName , username ) )
+            {
+                if ( db.GetInfo( UserName , username , password ).toString() != ui->E_P_LineEdit->text() )
+                {
+                    str += "<li>رمز عبور با نام کاربری همخوانی ندارد!</li>" ;
+                    sw = true ;
+                }
+                if ( ( db.GetInfo( UserName , username , phonenum ).toString() ) != ( ui->E_PhoneCodeNum->currentText() + "/" + ui->E_PhoneLineEdit->text() ) )
+                {
+                    str += "<li>شماره تلفن با نام کاربری همخوانی ندارد!</li>" ;
+                    sw = true ;
+                }
+                if ( sw )
+                {
+                    str += "</ul>" ;
+                    QMessageBox::information(this,"تکمیل اطلاعات",str,"باشه") ;
+                }
+                else
+                {
+                    // Go to safhe code taeed
+                    CodeTaeed *w = new CodeTaeed() ;
+                    w->show() ;
+                    this->~Enter() ;
+                }
+            }
+            else
+            {
+                str += "<li>کابری با این نام کاربری یافت نشد!</li></ul>" ;
+                QMessageBox::information(this,"تکمیل اطلاعات",str,"باشه") ;
+            }
         }
     }
     else
@@ -282,5 +363,39 @@ void Enter::on_E_EntRegButton_clicked()
         QMessageBox::information(this,"تکمیل اطلاعات",str,"باشه") ;
     }
     return ;
+}
+
+
+void Enter::on_E_PhoneCodeNum_activated(int index)
+{
+    ui->E_PhoneCodeRegion->setCurrentIndex(index) ;
+    return ;
+}
+
+
+void Enter::on_E_PhoneCodeRegion_activated(int index)
+{
+    ui->E_PhoneCodeNum->setCurrentIndex(index) ;
+    return ;
+}
+
+
+void Enter::on_E_PhoneLineEdit_textChanged(const QString &arg1)
+{
+    if ( !arg1.length() )
+    {
+        ui->E_PhoneEditingLabel->hide() ;
+        return ;
+    }
+    if ( arg1.length() < 5 )
+    {
+        ui->E_PhoneEditingLabel->show() ;
+        CheckPhoneNum = false ;
+    }
+    else
+    {
+        ui->E_PhoneEditingLabel->hide() ;
+        CheckPhoneNum = true ;
+    }
 }
 

@@ -9,15 +9,20 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    codetaeed.cpp \
     enter.cpp \
     main.cpp \
-    start.cpp
+    start.cpp \
+    MyLib/Newfolder/MyLib.cpp
 
 HEADERS += \
+    codetaeed.h \
     enter.h \
-    start.h
+    start.h \
+    MyLib/Newfolder/MyLib.h
 
 FORMS += \
+    codetaeed.ui \
     enter.ui \
     start.ui
 
