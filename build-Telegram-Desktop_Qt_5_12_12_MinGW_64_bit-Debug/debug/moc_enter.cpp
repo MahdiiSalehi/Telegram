@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Enter_t {
     QByteArrayData data[13];
-    char stringdata0[265];
+    char stringdata0[274];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,19 +38,20 @@ QT_MOC_LITERAL(3, 35, 4), // "arg1"
 QT_MOC_LITERAL(4, 40, 23), // "on_E_GotoButton_clicked"
 QT_MOC_LITERAL(5, 64, 27), // "on_E_P_LineEdit_textChanged"
 QT_MOC_LITERAL(6, 92, 28), // "on_E_P_VisableButton_clicked"
-QT_MOC_LITERAL(7, 121, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(8, 143, 25), // "on_E_EntRegButton_clicked"
-QT_MOC_LITERAL(9, 169, 27), // "on_E_PhoneCodeNum_activated"
-QT_MOC_LITERAL(10, 197, 5), // "index"
-QT_MOC_LITERAL(11, 203, 30), // "on_E_PhoneCodeRegion_activated"
-QT_MOC_LITERAL(12, 234, 30) // "on_E_PhoneLineEdit_textChanged"
+QT_MOC_LITERAL(7, 121, 30), // "on_E_CaptchaRegenerate_clicked"
+QT_MOC_LITERAL(8, 152, 25), // "on_E_EntRegButton_clicked"
+QT_MOC_LITERAL(9, 178, 27), // "on_E_PhoneCodeNum_activated"
+QT_MOC_LITERAL(10, 206, 5), // "index"
+QT_MOC_LITERAL(11, 212, 30), // "on_E_PhoneCodeRegion_activated"
+QT_MOC_LITERAL(12, 243, 30) // "on_E_PhoneLineEdit_textChanged"
 
     },
     "Enter\0on_E_U_LineEdit_textChanged\0\0"
     "arg1\0on_E_GotoButton_clicked\0"
     "on_E_P_LineEdit_textChanged\0"
     "on_E_P_VisableButton_clicked\0"
-    "on_pushButton_clicked\0on_E_EntRegButton_clicked\0"
+    "on_E_CaptchaRegenerate_clicked\0"
+    "on_E_EntRegButton_clicked\0"
     "on_E_PhoneCodeNum_activated\0index\0"
     "on_E_PhoneCodeRegion_activated\0"
     "on_E_PhoneLineEdit_textChanged"
@@ -105,7 +106,7 @@ void Enter::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         case 1: _t->on_E_GotoButton_clicked(); break;
         case 2: _t->on_E_P_LineEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 3: _t->on_E_P_VisableButton_clicked(); break;
-        case 4: _t->on_pushButton_clicked(); break;
+        case 4: _t->on_E_CaptchaRegenerate_clicked(); break;
         case 5: _t->on_E_EntRegButton_clicked(); break;
         case 6: _t->on_E_PhoneCodeNum_activated((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 7: _t->on_E_PhoneCodeRegion_activated((*reinterpret_cast< int(*)>(_a[1]))); break;

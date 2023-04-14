@@ -242,7 +242,7 @@ void Enter::GenerateCaptchaCode()
     return ;
 }
 
-void Enter::on_pushButton_clicked()
+void Enter::on_E_CaptchaRegenerate_clicked()
 {
     GenerateCaptchaCode() ;
     return ;

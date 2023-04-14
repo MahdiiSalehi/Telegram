@@ -34,7 +34,7 @@ private slots:
 
     void on_E_P_VisableButton_clicked();
 
-    void on_pushButton_clicked();
+    void on_E_CaptchaRegenerate_clicked();
 
     void on_E_EntRegButton_clicked();
 
