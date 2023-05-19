@@ -18,7 +18,8 @@ MyQSqlDatabase::MyQSqlDatabase()
            "("
            "phonenum VARCHAR (18) ,"
            "username VARCHAR (26) ,"
-           "password VARCHAR (26) "
+           "password VARCHAR (26) ,"
+           "name VARCHAR (20) "
            ") ;") ;
 }
 
@@ -41,13 +42,14 @@ bool MyQSqlDatabase::Search(const QString & str , column col )
     return false ;
 }
 
-bool MyQSqlDatabase::Insert(const QString &phonenum , const QString &username, const QString &password)
+bool MyQSqlDatabase::Insert(const QString &phonenum , const QString &username, const QString &password, const QString &name )
 {
     QSqlQuery q (DB) ;
-    q.prepare("INSERT INTO Users VALUES ( ? , ? , ? ) ;") ;
+    q.prepare("INSERT INTO Users VALUES ( ? , ? , ? , ? ) ;") ;
     q.addBindValue(phonenum) ;
     q.addBindValue(username) ;
     q.addBindValue(password) ;
+    q.addBindValue(name) ;
     return q.exec() ;
 }
 
