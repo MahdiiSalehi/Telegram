@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     codetaeed.cpp \
     enter.cpp \
+    get_name.cpp \
     main.cpp \
     start.cpp \
     MyLib/Newfolder/MyLib.cpp
@@ -18,12 +19,14 @@ SOURCES += \
 HEADERS += \
     codetaeed.h \
     enter.h \
+    get_name.h \
     start.h \
     MyLib/Newfolder/MyLib.h
 
 FORMS += \
     codetaeed.ui \
     enter.ui \
+    get_name.ui \
     start.ui
 
 TRANSLATIONS += \

@@ -1,5 +1,6 @@
 debug/codetaeed.o
 debug/enter.o
+debug/get_name.o
 debug/main.o
 debug/start.o
 debug/MyLib.o
@@ -7,4 +8,5 @@ debug/qrc_Pictures.o
 debug/qrc_qmake_qmake_qm_files.o
 debug/moc_codetaeed.o
 debug/moc_enter.o
+debug/moc_get_name.o
 debug/moc_start.o

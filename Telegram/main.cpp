@@ -1,5 +1,5 @@
 #include "start.h"
-#include "codetaeed.h"
+#include "get_name.h"
 
 #include <QApplication>
 #include <QLocale>

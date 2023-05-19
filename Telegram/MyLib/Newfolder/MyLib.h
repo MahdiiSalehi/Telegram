@@ -10,6 +10,7 @@ public :
     explicit MyQSqlDatabase() ;
     bool Search ( const QString& , column ) ;
     bool Insert1 ( const QString& , const QString& , const QString& ) ;
+    bool Insert_name ( const QString& , const QString& ) ;
     QVariant GetInfo ( const QString& , column , column ) ;
 };
 

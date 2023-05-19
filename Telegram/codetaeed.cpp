@@ -1,5 +1,6 @@
 #include "codetaeed.h"
 #include "ui_codetaeed.h"
+#include "get_name.h"
 #include <MyLib/Newfolder/MyLib.h>
 
 #include <QWidget>
@@ -8,9 +9,9 @@
 #include <QVBoxLayout>
 #include <QMessageBox>
 
-extern MyQSqlDatabase db ;
 enum condition { Entering , Registering } ;
 extern condition con ;
+extern MyQSqlDatabase db ;
 extern QString NewUserName ;
 extern QString NewPhoneNum ;
 extern QString NewPassword ;
@@ -109,6 +110,8 @@ void CodeTaeed::on_C_Button_clicked()
             QMessageBox::information(this,"توجه","<ul><li>ثبتنام با موفقیت انجام شد!</li></ul>","باشه") ;
             db.Insert1(NewPhoneNum,NewUserName,NewPassword) ;
         }
+        Get_Name *w = new Get_Name () ;
+        w->show () ;
         this->close() ;
         this->~CodeTaeed() ;
     }

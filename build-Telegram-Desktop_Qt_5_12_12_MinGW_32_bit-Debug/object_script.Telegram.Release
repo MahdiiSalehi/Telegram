@@ -1,5 +1,6 @@
 release/codetaeed.o
 release/enter.o
+release/get_name.o
 release/main.o
 release/start.o
 release/MyLib.o
@@ -7,4 +8,5 @@ release/qrc_Pictures.o
 release/qrc_qmake_qmake_qm_files.o
 release/moc_codetaeed.o
 release/moc_enter.o
+release/moc_get_name.o
 release/moc_start.o
