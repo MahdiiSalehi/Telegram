@@ -9,7 +9,7 @@ class MyQSqlDatabase
 public :
     explicit MyQSqlDatabase() ;
     bool Search ( const QString& , column ) ;
-    bool Insert ( const QString& , const QString& , const QString& , const QString& ) ;
+    bool Insert1 ( const QString& , const QString& , const QString& ) ;
     QVariant GetInfo ( const QString& , column , column ) ;
 };
 

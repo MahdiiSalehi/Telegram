@@ -107,7 +107,7 @@ void CodeTaeed::on_C_Button_clicked()
         else
         {
             QMessageBox::information(this,"توجه","<ul><li>ثبتنام با موفقیت انجام شد!</li></ul>","باشه") ;
-            db.Insert(NewPhoneNum,NewUserName,NewPassword) ;
+            db.Insert1(NewPhoneNum,NewUserName,NewPassword) ;
         }
         this->close() ;
         this->~CodeTaeed() ;
