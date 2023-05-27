@@ -11,7 +11,7 @@ MyQSqlDatabase::MyQSqlDatabase()
     DB.setPort(3306) ;
     DB.setUserName("root") ;
     DB.setPassword("AAAAAAAA") ;
-    DB.setDatabaseName("test0") ;
+    DB.setDatabaseName("test0.db") ;
     DB.open() ;
     QSqlQuery q(DB) ;
     q.exec("CREATE TABLE Users"
@@ -77,3 +77,4 @@ QVariant MyQSqlDatabase::GetInfo(const QString &str_1, column col_1, column col_
         }
     }
 }
+

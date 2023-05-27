@@ -1,3 +1,5 @@
+debug/Chat.o
+debug/User.o
 debug/codetaeed.o
 debug/enter.o
 debug/get_name.o

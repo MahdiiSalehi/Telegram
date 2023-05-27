@@ -1,3 +1,5 @@
+release/Chat.o
+release/User.o
 release/codetaeed.o
 release/enter.o
 release/get_name.o
