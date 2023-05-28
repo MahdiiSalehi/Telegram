@@ -4,19 +4,25 @@
 #ifndef CHAT_H
 #define CHAT_H
 
+class User ;
+
 class Pv
 {
+
+    friend class User ;
 
     QSqlDatabase DB ;
 
     QString name ;
     QString contact ;
 
-public :
+//public :
 
     Pv ( QSqlDatabase db ) ;
 
     void create_table () ;
+
+    void add_message ( const QString &text , const QString &sender ) ;
 
 };
 

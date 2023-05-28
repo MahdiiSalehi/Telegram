@@ -13,11 +13,20 @@ class User
     QString username ;
     QString name ;
 
-    Pv *pv ;
+    Pv **pv ;
+
+    int rows ;
+    int currentPv ;
 
 public :
 
-    User () ;
+    User ( QSqlDatabase db , QString _username , QString _name ) ;
+
+    ~User() ;
+
+    void addPV( QString contact ) ;
+
+    void add_message(const QString &text) ;
 
 };
 

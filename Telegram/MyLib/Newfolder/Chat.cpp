@@ -30,3 +30,13 @@ void Pv::create_table()
     file->write(str.toStdString().c_str()) ;
     file->close() ;
 }
+
+void Pv::add_message(const QString &text, const QString &sender)
+{
+    QSqlQuery q ( DB ) ;
+    q.prepare("INSERT INTO ?"
+              "VALUES ( ? , ? ) ;") ;
+    q.addBindValue(name) ;
+    q.addBindValue(sender) ;
+    q.addBindValue(text) ;
+}
