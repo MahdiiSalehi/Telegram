@@ -12,4 +12,7 @@
     <qresource prefix="/new/prefix4">
         <file>Captcha.jpg</file>
     </qresource>
+    <qresource prefix="/new/prefix5">
+        <file>TPP.png</file>
+    </qresource>
 </RCC>
