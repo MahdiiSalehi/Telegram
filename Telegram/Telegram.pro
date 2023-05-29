@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     MyLib/Newfolder/Chat.cpp \
     MyLib/Newfolder/User.cpp \
+    chatpage.cpp \
     codetaeed.cpp \
     enter.cpp \
     get_name.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 HEADERS += \
     MyLib/Newfolder/Chat.h \
     MyLib/Newfolder/User.h \
+    chatpage.h \
     codetaeed.h \
     enter.h \
     get_name.h \
@@ -28,6 +30,7 @@ HEADERS += \
     MyLib/Newfolder/MyLib.h
 
 FORMS += \
+    chatpage.ui \
     codetaeed.ui \
     enter.ui \
     get_name.ui \
