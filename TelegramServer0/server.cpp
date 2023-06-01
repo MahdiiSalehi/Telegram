@@ -77,7 +77,6 @@ void Server::discardSocket()
 
 void Server::readSocket()
 {
-
     QTcpSocket* socket = reinterpret_cast<QTcpSocket*>(sender()) ;
 
 
@@ -99,6 +98,7 @@ void Server::readSocket()
 
         firstMessage = false ;
 
+        //QMessageBox::critical( nullptr , "Server" , "firstMessage" , buffer ) ;
         return ;
     }
 
@@ -107,7 +107,8 @@ void Server::readSocket()
             for ( int j = 0 ; j < num_users ; j ++ )
                 if ( users [j]->getSocket() == socket )
                 {
-                    sendMessage( users [i]->getSocket() , users [j]->getUsername() ) ;
+                    sendMessage( users [i]->getSocket() , users [j]->getUsername().toUtf8() ) ;
+                    //QMessageBox::critical( nullptr , "Server" , "Message" , users[j]->getUsername() , users [i]->getUsername() ) ;
                     return ;
                 }
 }
@@ -161,7 +162,7 @@ void Server::readSocket()
 //        emit newMessage(message);
 //    }
 //}
-void Server::sendMessage(QTcpSocket* socket , QString name )
+void Server::sendMessage(QTcpSocket* socket , QByteArray name )
 {
     if(socket)
     {
@@ -170,8 +171,9 @@ void Server::sendMessage(QTcpSocket* socket , QString name )
             QDataStream socketStream(socket);
             socketStream.setVersion(QDataStream::Qt_5_12);
 
-            //socketStream.setVersion(QDataStream::Qt_5_12);
+            socketStream.setVersion(QDataStream::Qt_5_12);
             socketStream << name;
+            //QMessageBox::critical( nullptr , "Server" , "SendMessage" , name ) ;
         }
         else
             QMessageBox::critical(this,"QTCPServer","Socket doesn't seem to be opened");

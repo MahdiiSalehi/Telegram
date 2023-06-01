@@ -1,7 +1,7 @@
 #include "codetaeed.h"
 #include "ui_codetaeed.h"
 #include "get_name.h"
-#include <MyLib/Newfolder/MyLib.h>
+#include "chatpage.h"
 
 #include <QWidget>
 #include <QLineEdit>
@@ -104,14 +104,16 @@ void CodeTaeed::on_C_Button_clicked()
         if ( con == Entering )
         {
             QMessageBox::information(this,"توجه","<ul><li>با موفقیت وارد حساب خود شدید!</li></ul>","باشه") ;
+            ChatPage *w = new ChatPage () ;
+            w->show () ;
         }
         else
         {
             QMessageBox::information(this,"توجه","<ul><li>ثبتنام با موفقیت انجام شد!</li></ul>","باشه") ;
             db.Insert1(NewPhoneNum,NewUserName,NewPassword) ;
+            Get_Name *w = new Get_Name () ;
+            w->show () ;
         }
-        Get_Name *w = new Get_Name () ;
-        w->show () ;
         this->close() ;
         this->~CodeTaeed() ;
     }

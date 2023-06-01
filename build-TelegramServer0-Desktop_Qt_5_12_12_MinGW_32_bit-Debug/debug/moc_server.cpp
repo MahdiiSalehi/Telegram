@@ -82,7 +82,7 @@ static const uint qt_meta_data_Server[] = {
     QMetaType::Void, 0x80000000 | 5,    6,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 5, QMetaType::QString,    6,   10,
+    QMetaType::Void, 0x80000000 | 5, QMetaType::QByteArray,    6,   10,
 
        0        // eod
 };
@@ -98,7 +98,7 @@ void Server::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 2: _t->appendToSocketList((*reinterpret_cast< QTcpSocket*(*)>(_a[1]))); break;
         case 3: _t->readSocket(); break;
         case 4: _t->discardSocket(); break;
-        case 5: _t->sendMessage((*reinterpret_cast< QTcpSocket*(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 5: _t->sendMessage((*reinterpret_cast< QTcpSocket*(*)>(_a[1])),(*reinterpret_cast< QByteArray(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {

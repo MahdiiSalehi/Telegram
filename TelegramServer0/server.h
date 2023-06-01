@@ -30,7 +30,7 @@ private slots:
     void readSocket();
     void discardSocket();
 
-    void sendMessage(QTcpSocket* socket , QString name );
+    void sendMessage(QTcpSocket* socket , QByteArray name );
 
 private:
     Ui::Server *ui;

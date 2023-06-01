@@ -44,6 +44,10 @@ private slots:
     void on_C_AddContactButton_clicked();
     void on_C_ChatList_itemDoubleClicked(QListWidgetItem *item);
     void on_C_ContactList_itemClicked(QListWidgetItem *item);
+
+    void ChatOn () ;
+    void ChatOf () ;
+
 };
 
 #endif // CHATPAGE_H

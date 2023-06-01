@@ -41,13 +41,15 @@ ChatPage::ChatPage(QWidget *parent) :
             QDataStream socketStream(socket);
             socketStream.setVersion(QDataStream::Qt_5_12);
 
-            socketStream << NewUserName ;
+            socketStream << NewUserName.toUtf8() ;
         }
         else
             QMessageBox::critical(this,"QTCPClient","Socket doesn't seem to be opened");
     }
     else
         QMessageBox::critical(this,"QTCPClient","Not connected");
+
+    ChatOf () ;
 
 }
 
@@ -79,10 +81,13 @@ void ChatPage::readSocket ()
 
     socketStream.startTransaction();
     socketStream >> buffer;
+    //QMessageBox::critical( nullptr , "Client" , " From " + buffer ) ;
 
     if ( buffer == user->getCurrentPv()->getContact() )
     {
         user->ShowLastMessageCurrentPv( ui->C_ChatList ) ;
+        ui->C_ChatList->scrollToBottom() ;
+        //QMessageBox::critical( nullptr , "Client" , "sender is : " + buffer ) ;
     }
     else
     {// show Unseened messages
@@ -159,6 +164,8 @@ void ChatPage::on_C_MessageButton_clicked()
         {
             user->add_message(ui->C_PlainText->toPlainText()) ;
             ui->C_ChatList->addItem( "->" + NewUserName + '\n' + ui->C_PlainText->toPlainText() ) ;
+            ui->C_ChatList->scrollToBottom() ;
+            ui->C_PlainText->clear() ;
 
             QDataStream socketStream(socket);
             socketStream.setVersion(QDataStream::Qt_5_12);
@@ -177,6 +184,7 @@ void ChatPage::on_C_MessageButton_clicked()
 
 void ChatPage::on_C_AddContactButton_clicked()
 {
+    ChatOf () ;
     ui->C_ChatList->clear() ;
     QSqlQuery q ( *db.getDataBase() ) ;
     q.exec("SELECT * FROM Users ;") ;
@@ -196,6 +204,13 @@ void ChatPage::on_C_ChatList_itemDoubleClicked(QListWidgetItem *item)
 {
     if ( chatlist == pv )
     {
+        for ( int i = 0 ; i < user->get_rows() ; i ++ )
+            if ( user->getPv(i)->getContact() == item->text() )
+            {
+                ui->C_ChatList->clear() ;
+                chatlist = none ;
+                return ;
+            }
         ui->C_ContactList->addItem(item->text()) ;
         user->addPV( item->text() ) ;
         ui->C_ChatList->clear() ;
@@ -210,8 +225,19 @@ void ChatPage::on_C_ChatList_itemDoubleClicked(QListWidgetItem *item)
 
 void ChatPage::on_C_ContactList_itemClicked(QListWidgetItem *item)
 {
+    ChatOn () ;
     user->setCurrentPv( item->text() ) ;
     ui->C_ChatList->clear() ;
     user->ShowMessages( ui->C_ChatList ) ;
+}
+
+void ChatPage::ChatOn ()
+{
+    ui->frame->setEnabled(1) ;
+}
+
+void ChatPage::ChatOf ()
+{
+    ui->frame->setDisabled(1) ;
 }
 

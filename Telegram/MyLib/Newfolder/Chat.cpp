@@ -67,6 +67,7 @@ void Pv::ShowMessaegs(QListWidget *lw)
     {
         lw->addItem( "->" + q.value(0).toString() + '\n' + q.value(1).toString() ) ;
     }
+    lw->scrollToBottom() ;
 }
 
 void Pv::ShowLastMessage(QListWidget *lw)
@@ -79,4 +80,5 @@ void Pv::ShowLastMessage(QListWidget *lw)
 
     q.last() ;
     lw->addItem( "->" + q.value(0).toString() + '\n' + q.value(1).toString() ) ;
+    lw->scrollToBottom() ;
 }

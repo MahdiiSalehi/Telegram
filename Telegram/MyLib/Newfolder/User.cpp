@@ -14,8 +14,8 @@ User::User ( QSqlDatabase* db , QString _username , QString _name )
               "pv_name VARCHAR (5) ,"
               "contact VARCHAR (26) "
               ") ;") ;
-    if ( !q.exec() )
-        QMessageBox::critical( nullptr , "" , "No6" ) ;
+    if ( !q.exec() );
+        //QMessageBox::critical( nullptr , "" , "No6" ) ;
 
     q.prepare("SELECT * FROM " + username + " ;") ;
     if ( !q.exec() )
