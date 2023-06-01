@@ -78,3 +78,8 @@ QVariant MyQSqlDatabase::GetInfo(const QString &str_1, column col_1, column col_
     }
 }
 
+QSqlDatabase* MyQSqlDatabase::getDataBase()
+{
+    return &DB ;
+}
+

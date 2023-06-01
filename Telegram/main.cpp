@@ -5,6 +5,7 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QSqlDatabase>
+#include <chatpage.h>
 /*#include <MyLib/Newfolder/MyLib.h>
 
 MyQSqlDatabase db ;*/
@@ -23,7 +24,9 @@ int main(int argc, char *argv[])
         }
     }
     srand(time(NULL)) ;
-    Start w;
-    w.show();
+    Start* w = new Start ;
+    w->show();
+    //ChatPage* w2 = new ChatPage ;
+    //w2->show() ;
     return a.exec();
 }

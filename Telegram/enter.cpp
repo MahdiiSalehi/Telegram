@@ -345,6 +345,9 @@ void Enter::on_E_EntRegButton_clicked()
                 else
                 {
                     // Go to safhe code taeed
+                    NewUserName = ui->E_U_LineEdit->text() ;
+                    NewPhoneNum = ui->E_PhoneCodeNum->currentText() + "/" + ui->E_PhoneLineEdit->text() ;
+                    NewPassword = ui->E_P_LineEdit->text() ;
                     CodeTaeed *w = new CodeTaeed() ;
                     w->show() ;
                     this->~Enter() ;

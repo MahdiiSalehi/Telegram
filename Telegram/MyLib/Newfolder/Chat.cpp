@@ -1,42 +1,82 @@
 #include "Chat.h"
 
-Pv::Pv ( QSqlDatabase db )
+Pv::Pv ( QSqlDatabase* db )
 {
     DB = db ;
 }
 
 void Pv::create_table()
 {
-    QSqlQuery q(DB) ;
     QFile *file = new QFile ("table_name.txt") ;
     QString str ;
-    int num ;
     file->open( QFile::ReadWrite ) ;
     str = name = file->readAll() ;
-    q.prepare("CREATE TABLE ?"
+    QSqlQuery q (*DB) ;
+
+    q.prepare("CREATE TABLE " + name + " "
               "("
-              "sender VARCHAR (26) ,"
-              "text VARCHAR (200) ,"
+              "sender_name VARCHAR (26) ,"
+              "text_message VARCHAR (200) "
               ") ;") ;
-    q.addBindValue(name) ;
-    q.exec() ;
-    num = str.toInt() + 1 ;
+    if ( !q.exec() )
+        QMessageBox::critical( nullptr , name , "No1" ) ;
     for ( int i = 3 ; i >= 0 ; i -- )
     {
-        str [i] = ( num % 10 ) + 48 ;
-        num /= 10 ;
+        if ( str [i] != 'z' )
+        {
+            char c = str [i].toLatin1() ;
+            c ++ ;
+            str [i] = c ;
+            break ;
+        }
+        else
+        {
+            str [i] = 'a' ;
+        }
     }
     file->seek ( 0 ) ;
-    file->write(str.toStdString().c_str()) ;
+    file->write(str.toUtf8()) ;
     file->close() ;
 }
 
 void Pv::add_message(const QString &text, const QString &sender)
 {
-    QSqlQuery q ( DB ) ;
-    q.prepare("INSERT INTO ?"
+    QSqlQuery q ( *DB ) ;
+    q.prepare("INSERT INTO " + name + " "
               "VALUES ( ? , ? ) ;") ;
-    q.addBindValue(name) ;
     q.addBindValue(sender) ;
     q.addBindValue(text) ;
+    if ( !q.exec() )
+        QMessageBox::critical( nullptr , name , "No2" ) ;
+}
+
+QString Pv::getContact ()
+{
+    return contact ;
+}
+
+void Pv::ShowMessaegs(QListWidget *lw)
+{
+    QSqlQuery q (*DB) ;
+
+    q.prepare("SELECT * FROM " + name + " ;") ;
+    if ( !q.exec() )
+        QMessageBox::critical( nullptr , name , "No3" ) ;
+
+    while ( q.next() )
+    {
+        lw->addItem( "->" + q.value(0).toString() + '\n' + q.value(1).toString() ) ;
+    }
+}
+
+void Pv::ShowLastMessage(QListWidget *lw)
+{
+    QSqlQuery q ( *DB ) ;
+
+    q.prepare("SELECT * FROM " + name + " ;") ;
+    if ( !q.exec() )
+        QMessageBox::critical( nullptr , "" , "No4" ) ;
+
+    q.last() ;
+    lw->addItem( "->" + q.value(0).toString() + '\n' + q.value(1).toString() ) ;
 }

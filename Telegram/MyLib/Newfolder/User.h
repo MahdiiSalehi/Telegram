@@ -1,5 +1,3 @@
-#include <QSqlDatabase>
-#include <QtSql>
 #include "Chat.h"
 
 #ifndef USER_H
@@ -8,7 +6,7 @@
 class User
 {
 
-    QSqlDatabase DB ;
+    QSqlDatabase* DB ;
 
     QString username ;
     QString name ;
@@ -20,13 +18,25 @@ class User
 
 public :
 
-    User ( QSqlDatabase db , QString _username , QString _name ) ;
+    User ( QSqlDatabase* db , QString _username , QString _name ) ;
 
     ~User() ;
 
     void addPV( QString contact ) ;
 
     void add_message(const QString &text) ;
+
+    Pv* getCurrentPv () ;
+
+    int get_rows () ;
+
+    Pv* getPv ( int n ) ;
+
+    void setCurrentPv ( QString str ) ;
+
+    void ShowMessages ( QListWidget *lw ) ;
+
+    void ShowLastMessageCurrentPv ( QListWidget *lw ) ;
 
 };
 

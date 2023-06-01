@@ -1,6 +1,6 @@
 #include "get_name.h"
 #include "ui_get_name.h"
-#include <MyLib/Newfolder/MyLib.h>
+#include "chatpage.h"
 #include <QMessageBox>
 
 extern MyQSqlDatabase db ;
@@ -29,7 +29,8 @@ void Get_Name::on_GN_button_clicked()
         db.Insert_name( NewUserName , s ) ;
         Name = s ;
         QMessageBox::information( this , "خوش آمد گویی" , "خوش آمدی " + s , "بریم" ) ;
-        // vorod be safhe chat
+        ChatPage *w = new ChatPage () ;
+        w->show() ;
         this->close() ;
         this->~Get_Name() ;
     }
