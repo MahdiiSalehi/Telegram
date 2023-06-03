@@ -230,9 +230,16 @@ void ChatPage::on_C_ChatList_itemDoubleClicked(QListWidgetItem *item)
         ui->C_ChatList->clear() ;
         chatlist = none ;
     }
-    else
+    else if ( chatlist == chat )
     {
-
+        if ( !item->icon().isNull() )
+        {
+            QMessageBox::information( this , "Icon" , "Icon isn't null" ) ;
+        }
+        else
+        {
+            QMessageBox::information( this , "Icon" , "Icon is null" ) ;
+        }
     }
 }
 
@@ -256,12 +263,14 @@ void ChatPage::on_C_ContactList_itemClicked(QListWidgetItem *item)
 
 void ChatPage::ChatOn ()
 {
+    chatlist = chat ;
     ui->frame->setEnabled(1) ;
     ContactNameLabelOn () ;
 }
 
 void ChatPage::ChatOff ()
 {
+    chatlist = none ;
     ui->frame->setDisabled(1) ;
     ContactNameLabelOff () ;
 }
