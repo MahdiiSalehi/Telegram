@@ -76,6 +76,11 @@ void User::add_message(const QString &text)
     pv[currentPv]->add_message( text , username ) ;
 }
 
+void User::add_file (const QString &address)
+{
+    pv[currentPv]->add_file ( address , username ) ;
+}
+
 Pv* User::getCurrentPv ()
 {
     return pv[currentPv] ;
@@ -94,9 +99,12 @@ Pv* User::getPv(int n)
 
 void User::setCurrentPv(QString str)
 {
+    QString str2 ;
+    for ( int i = 0 ; str[i] != '(' && str[i] != '\n' ; i ++ )
+        str2 [i] = str [i] ;
     for ( int i = 0 ; i < rows ; i ++ )
     {
-        if ( pv [i]->contact == str )
+        if ( pv [i]->contact == str2 )
         {
             currentPv = i ;
         }
@@ -105,10 +113,26 @@ void User::setCurrentPv(QString str)
 
 void User::ShowMessages(QListWidget *lw)
 {
+    //QMessageBox::critical( nullptr , "ERROR" , QString::number(currentPv) ) ;
     pv[currentPv]->ShowMessaegs( lw ) ;
+    //QMessageBox::critical( nullptr , "ERROR" , "SH3" ) ;
 }
 
 void User::ShowLastMessageCurrentPv(QListWidget *lw)
 {
     pv[currentPv]->ShowLastMessage( lw ) ;
+}
+
+void User::ShowPvs(QListWidget *lw)
+{
+    lw->clear() ;
+    int UnSeenMessage ;
+    for ( int i = 0 ; i < rows ; i ++ )
+    {
+        UnSeenMessage = pv[i]->CountUnSeenMessages() ;
+        if ( UnSeenMessage )
+            lw->addItem( pv[i]->getContact()+ '(' + QString::number(UnSeenMessage) + ")\n" + pv[i]->getSummaryLastMessage() ) ;
+        else
+            lw->addItem( pv[i]->getContact() + '\n' + pv[i]->getSummaryLastMessage() ) ;
+    }
 }

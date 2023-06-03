@@ -6,7 +6,7 @@ extern QString NewUserName ;
 extern QString Name ;
 
 enum ChatList { pv , chat , none } ;
-ChatList chatlist ;
+ChatList chatlist = none ;
 
 ChatPage::ChatPage(QWidget *parent) :
     QMainWindow(parent),
@@ -15,11 +15,7 @@ ChatPage::ChatPage(QWidget *parent) :
     ui->setupUi(this);
     user = new User ( db.getDataBase() , NewUserName , Name ) ;
 
-    for ( int i = 0 ; i < user->get_rows() ; i ++ )
-    {
-        item = new QListWidgetItem ( user->getPv(i)->getContact() ) ;
-        ui->C_ContactList->addItem( item ) ;
-    }
+    user->ShowPvs( ui->C_ContactList ) ;
 
     socket = new QTcpSocket (this) ;
 
@@ -49,7 +45,7 @@ ChatPage::ChatPage(QWidget *parent) :
     else
         QMessageBox::critical(this,"QTCPClient","Not connected");
 
-    ChatOf () ;
+    ChatOff () ;
 
 }
 
@@ -83,14 +79,31 @@ void ChatPage::readSocket ()
     socketStream >> buffer;
     //QMessageBox::critical( nullptr , "Client" , " From " + buffer ) ;
 
-    if ( buffer == user->getCurrentPv()->getContact() )
+    if ( ui->frame->isEnabled() && buffer == user->getCurrentPv()->getContact() )
     {
+//        if ( buffer.toStdString()[0] == 'i' )
+//        {
+
+//        }
+//        else
+//        {
+
+//        }
         user->ShowLastMessageCurrentPv( ui->C_ChatList ) ;
         ui->C_ChatList->scrollToBottom() ;
         //QMessageBox::critical( nullptr , "Client" , "sender is : " + buffer ) ;
     }
     else
     {// show Unseened messages
+        for ( int i = 0 ; i < user->get_rows() ; i ++ )
+        {
+            if ( user->getPv(i)->getContact() == buffer )
+            {
+                user->getPv(i)->CountUnSeenMessages() ;
+                user->ShowPvs( ui->C_ContactList ) ;
+                break ;
+            }
+        }
     }
 }
 /*
@@ -152,7 +165,7 @@ void ChatPage::discardSocket()
 }
 
 
-void ChatPage::on_C_MessageButton_clicked()
+void ChatPage::on_C_SendMessageButton_clicked()
 {
     if ( IsEmptyText( ui->C_PlainText->toPlainText() ) )
     {
@@ -163,9 +176,10 @@ void ChatPage::on_C_MessageButton_clicked()
         if(socket->isOpen())
         {
             user->add_message(ui->C_PlainText->toPlainText()) ;
-            ui->C_ChatList->addItem( "->" + NewUserName + '\n' + ui->C_PlainText->toPlainText() ) ;
+            ui->C_ChatList->addItem( "<" + NewUserName + ">\n" + ui->C_PlainText->toPlainText() ) ;
             ui->C_ChatList->scrollToBottom() ;
             ui->C_PlainText->clear() ;
+            user->ShowPvs( ui->C_ContactList ) ;
 
             QDataStream socketStream(socket);
             socketStream.setVersion(QDataStream::Qt_5_12);
@@ -184,7 +198,7 @@ void ChatPage::on_C_MessageButton_clicked()
 
 void ChatPage::on_C_AddContactButton_clicked()
 {
-    ChatOf () ;
+    ChatOff () ;
     ui->C_ChatList->clear() ;
     QSqlQuery q ( *db.getDataBase() ) ;
     q.exec("SELECT * FROM Users ;") ;
@@ -224,20 +238,99 @@ void ChatPage::on_C_ChatList_itemDoubleClicked(QListWidgetItem *item)
 
 
 void ChatPage::on_C_ContactList_itemClicked(QListWidgetItem *item)
-{
-    ChatOn () ;
+{   
+    //QMessageBox::critical( nullptr , "ERROR" , "E2" ) ;
     user->setCurrentPv( item->text() ) ;
+    //QMessageBox::critical( nullptr , "ERROR" , "E3" ) ;
     ui->C_ChatList->clear() ;
+    //QMessageBox::critical( nullptr , "ERROR" , "E4" ) ;
     user->ShowMessages( ui->C_ChatList ) ;
+    //QMessageBox::critical( nullptr , "ERROR" , "E5" ) ;
+    user->getCurrentPv()->seen_messages() ;
+    //QMessageBox::critical( nullptr , "ERROR" , "E6" ) ;
+    user->ShowPvs( ui->C_ContactList ) ;
+    //QMessageBox::critical( nullptr , "ERROR" , "E7" ) ;
+    ChatOn () ;
+    //QMessageBox::critical( nullptr , "ERROR" , "E1" ) ;
 }
 
 void ChatPage::ChatOn ()
 {
     ui->frame->setEnabled(1) ;
+    ContactNameLabelOn () ;
 }
 
-void ChatPage::ChatOf ()
+void ChatPage::ChatOff ()
 {
     ui->frame->setDisabled(1) ;
+    ContactNameLabelOff () ;
+}
+
+void ChatPage::ContactNameLabelOn ()
+{
+    ui->C_ContactName->show () ;
+    ui->C_ContactName->setText( user->getCurrentPv()->getContact() ) ;
+}
+
+void ChatPage::ContactNameLabelOff ()
+{
+    ui->C_ContactName->hide() ;
+}
+
+
+void ChatPage::on_C_SendFileButton_clicked()
+{
+    if(socket)
+        {
+            if(socket->isOpen())
+            {
+                QString filePath = QFileDialog::getOpenFileName(this, ("Select an attachment"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation), ("File (*.json *.txt *.png *.jpg *.jpeg)"));
+
+                if(filePath.isEmpty()){
+                    QMessageBox::critical(this,"QTCPClient","You haven't selected any attachment!");
+                    return;
+                }
+
+                QFile m_file(filePath);
+                if(m_file.open(QIODevice::ReadOnly)){
+
+                    user->add_file( filePath ) ;
+                    item = new QListWidgetItem ( "<" + NewUserName + ">\n" ) ;
+                    item->setIcon(QIcon(filePath)) ;
+                    ui->C_ChatList->addItem( item ) ;
+                    ui->C_ChatList->scrollToBottom() ;
+                    ui->C_PlainText->clear() ;
+                    user->ShowPvs( ui->C_ContactList ) ;
+
+
+//                    QFileInfo fileInfo(m_file.fileName());
+//                    QString fileName(fileInfo.fileName());
+
+//                    QDataStream socketStream(socket);
+//                    socketStream.setVersion(QDataStream::Qt_5_12);
+
+//                    QByteArray header;
+//                    header.prepend(QString("fileType:attachment,fileName:%1,fileSize:%2;").arg(fileName).arg(m_file.size()).toUtf8());
+//                    header.resize(128);
+
+//                    QByteArray byteArray = m_file.readAll();
+//                    byteArray.prepend(header);
+
+//                    socketStream.setVersion(QDataStream::Qt_5_12);
+//                    socketStream << byteArray;
+                    QDataStream socketStream(socket);
+                    socketStream.setVersion(QDataStream::Qt_5_12);
+
+                    QByteArray byteArray (user->getCurrentPv()->getContact().toStdString().c_str()) ;
+
+                    socketStream << byteArray;
+                }else
+                    QMessageBox::critical(this,"QTCPClient","Attachment is not readable!");
+            }
+            else
+                QMessageBox::critical(this,"QTCPClient","Socket doesn't seem to be opened");
+        }
+        else
+            QMessageBox::critical(this,"QTCPClient","Not connected");
 }
 

@@ -26,6 +26,8 @@ public :
 
     void add_message(const QString &text) ;
 
+    void add_file (const QString &address) ;
+
     Pv* getCurrentPv () ;
 
     int get_rows () ;
@@ -37,6 +39,8 @@ public :
     void ShowMessages ( QListWidget *lw ) ;
 
     void ShowLastMessageCurrentPv ( QListWidget *lw ) ;
+
+    void ShowPvs ( QListWidget *lw ) ;
 
 };
 

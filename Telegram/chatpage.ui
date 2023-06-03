@@ -14,8 +14,47 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_3">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0" rowspan="2">
+     <widget class="QSplitter" name="splitter_5">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QListWidget" name="C_ContactList">
+       <property name="maximumSize">
+        <size>
+         <width>310</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="C_AddContactButton">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>AddContact</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
     <item row="0" column="1">
+     <widget class="QLabel" name="C_ContactName">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
      <widget class="QSplitter" name="splitter_2">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -45,7 +84,7 @@
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
-           <widget class="QPushButton" name="C_MessageButton">
+           <widget class="QPushButton" name="C_SendMessageButton">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -56,7 +95,7 @@
              <string>Send Message</string>
             </property>
            </widget>
-           <widget class="QPushButton" name="C_FileButton">
+           <widget class="QPushButton" name="C_SendFileButton">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -71,32 +110,6 @@
          </widget>
         </item>
        </layout>
-      </widget>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QSplitter" name="splitter_5">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <widget class="QListWidget" name="C_ContactList">
-       <property name="maximumSize">
-        <size>
-         <width>310</width>
-         <height>16777215</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="C_AddContactButton">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>AddContact</string>
-       </property>
       </widget>
      </widget>
     </item>

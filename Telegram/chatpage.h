@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QHostAddress>
 #include <QListWidgetItem>
+#include <QFileDialog>
 #include <QWidget>
 #include "MyLib/Newfolder/User.h"
 #include "MyLib/Newfolder/MyLib.h"
@@ -40,14 +41,18 @@ private slots:
     void readSocket();
     void discardSocket();
 
-    void on_C_MessageButton_clicked();
+    void on_C_SendMessageButton_clicked();
     void on_C_AddContactButton_clicked();
     void on_C_ChatList_itemDoubleClicked(QListWidgetItem *item);
     void on_C_ContactList_itemClicked(QListWidgetItem *item);
 
     void ChatOn () ;
-    void ChatOf () ;
+    void ChatOff () ;
 
+    void ContactNameLabelOn () ;
+    void ContactNameLabelOff () ;
+
+    void on_C_SendFileButton_clicked();
 };
 
 #endif // CHATPAGE_H
