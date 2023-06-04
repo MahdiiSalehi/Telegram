@@ -13,6 +13,7 @@ ChatPage::ChatPage(QWidget *parent) :
     ui(new Ui::ChatPage)
 {
     ui->setupUi(this);
+    this->setWindowTitle(NewUserName) ;
     user = new User ( db.getDataBase() , NewUserName , Name ) ;
 
     user->ShowPvs( ui->C_ContactList ) ;
@@ -79,29 +80,44 @@ void ChatPage::readSocket ()
     socketStream >> buffer;
     //QMessageBox::critical( nullptr , "Client" , " From " + buffer ) ;
 
-    if ( ui->frame->isEnabled() && buffer == user->getCurrentPv()->getContact() )
+    if ( buffer[0] == '#' )
     {
-//        if ( buffer.toStdString()[0] == 'i' )
-//        {
-
-//        }
-//        else
-//        {
-
-//        }
-        user->ShowLastMessageCurrentPv( ui->C_ChatList ) ;
-        ui->C_ChatList->scrollToBottom() ;
-        //QMessageBox::critical( nullptr , "Client" , "sender is : " + buffer ) ;
+        if ( buffer[2] == 'n' )
+        {
+            user->setCurrentPvState( true ) ;
+        }
+        else
+        {
+            user->setCurrentPvState( false ) ;
+        }
+        ChatOn () ;
     }
     else
-    {// show Unseened messages
-        for ( int i = 0 ; i < user->get_rows() ; i ++ )
+    {
+        if ( ui->frame->isEnabled() && buffer == user->getCurrentPv()->getContact() )
         {
-            if ( user->getPv(i)->getContact() == buffer )
+    //        if ( buffer.toStdString()[0] == 'i' )
+    //        {
+
+    //        }
+    //        else
+    //        {
+
+    //        }
+            user->ShowLastMessageCurrentPv( ui->C_ChatList ) ;
+            ui->C_ChatList->scrollToBottom() ;
+            //QMessageBox::critical( nullptr , "Client" , "sender is : " + buffer ) ;
+        }
+        else
+        {// show Unseened messages
+            for ( int i = 0 ; i < user->get_rows() ; i ++ )
             {
-                user->getPv(i)->CountUnSeenMessages() ;
-                user->ShowPvs( ui->C_ContactList ) ;
-                break ;
+                if ( user->getPv(i)->getContact() == buffer )
+                {
+                    user->getPv(i)->CountUnSeenMessages() ;
+                    user->ShowPvs( ui->C_ContactList ) ;
+                    break ;
+                }
             }
         }
     }
@@ -247,7 +263,7 @@ void ChatPage::on_C_ChatList_itemDoubleClicked(QListWidgetItem *item)
 void ChatPage::on_C_ContactList_itemClicked(QListWidgetItem *item)
 {   
     //QMessageBox::critical( nullptr , "ERROR" , "E2" ) ;
-    user->setCurrentPv( item->text() ) ;
+    user->setCurrentPv( item->text() , socket ) ;
     //QMessageBox::critical( nullptr , "ERROR" , "E3" ) ;
     ui->C_ChatList->clear() ;
     //QMessageBox::critical( nullptr , "ERROR" , "E4" ) ;
@@ -257,7 +273,6 @@ void ChatPage::on_C_ContactList_itemClicked(QListWidgetItem *item)
     //QMessageBox::critical( nullptr , "ERROR" , "E6" ) ;
     user->ShowPvs( ui->C_ContactList ) ;
     //QMessageBox::critical( nullptr , "ERROR" , "E7" ) ;
-    ChatOn () ;
     //QMessageBox::critical( nullptr , "ERROR" , "E1" ) ;
 }
 
@@ -278,7 +293,12 @@ void ChatPage::ChatOff ()
 void ChatPage::ContactNameLabelOn ()
 {
     ui->C_ContactName->show () ;
-    ui->C_ContactName->setText( user->getCurrentPv()->getContact() ) ;
+    QString str ;
+    if ( user->getCurrentPvState() )
+        str = "Online" ;
+    else
+        str = "Offline" ;
+    ui->C_ContactName->setText( user->getCurrentPv()->getContact() + "  [" + str + ']' ) ;
 }
 
 void ChatPage::ContactNameLabelOff ()
@@ -342,4 +362,5 @@ void ChatPage::on_C_SendFileButton_clicked()
         else
             QMessageBox::critical(this,"QTCPClient","Not connected");
 }
+
 

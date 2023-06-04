@@ -6,6 +6,7 @@ User::User ( QSqlDatabase* db , QString _username , QString _name )
     name = _name ;
     username = _username ;
     rows = 0 ;
+    currentPvState = false ;
 
     QSqlQuery q (*DB) ;
 
@@ -97,7 +98,7 @@ Pv* User::getPv(int n)
         return pv [n] ;
 }
 
-void User::setCurrentPv(QString str)
+void User::setCurrentPv(QString str, QTcpSocket* socket)
 {
     QString str2 ;
     for ( int i = 0 ; str[i] != '(' && str[i] != '\n' ; i ++ )
@@ -109,6 +110,17 @@ void User::setCurrentPv(QString str)
             currentPv = i ;
         }
     }
+
+    currentPvState = false ;
+
+    QByteArray buffer ("#") ;
+    buffer.append(str2) ;
+
+    QDataStream socketStream(socket);
+    socketStream.setVersion(QDataStream::Qt_5_12);
+
+    socketStream << buffer ;
+
 }
 
 void User::ShowMessages(QListWidget *lw)
@@ -135,4 +147,14 @@ void User::ShowPvs(QListWidget *lw)
         else
             lw->addItem( pv[i]->getContact() + '\n' + pv[i]->getSummaryLastMessage() ) ;
     }
+}
+
+bool User::getCurrentPvState()
+{
+    return currentPvState ;
+}
+
+void User::setCurrentPvState(bool state)
+{
+    currentPvState = state ;
 }

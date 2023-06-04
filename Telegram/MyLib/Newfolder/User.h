@@ -1,4 +1,5 @@
 #include "Chat.h"
+#include <QTcpSocket>
 
 #ifndef USER_H
 #define USER_H
@@ -15,6 +16,8 @@ class User
 
     int rows ;
     int currentPv ;
+
+    bool currentPvState ;
 
 public :
 
@@ -34,13 +37,16 @@ public :
 
     Pv* getPv ( int n ) ;
 
-    void setCurrentPv ( QString str ) ;
+    void setCurrentPv ( QString str , QTcpSocket* socket ) ;
 
     void ShowMessages ( QListWidget *lw ) ;
 
     void ShowLastMessageCurrentPv ( QListWidget *lw ) ;
 
     void ShowPvs ( QListWidget *lw ) ;
+
+    bool getCurrentPvState() ;
+    void setCurrentPvState ( bool state ) ;
 
 };
 

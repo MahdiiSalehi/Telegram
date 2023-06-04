@@ -88,29 +88,51 @@ void Server::readSocket()
     socketStream.startTransaction();
     socketStream >> buffer;
 
-
-    if ( firstMessage )
+    if ( buffer[0] == '#' )
     {
-
-        User* u = new User ( socket , buffer ) ;
-
-        addUser( u ) ;
-
-        firstMessage = false ;
-
-        //QMessageBox::critical( nullptr , "Server" , "firstMessage" , buffer ) ;
-        return ;
+        QString str ;
+        for ( int i = 1 ; i < buffer.size() ; i ++ )
+            str.append(buffer.toStdString()[i]) ;
+        bool sw = false ;
+        for ( int i = 0 ; i < num_users ; i ++ )
+            if ( users [i]->getUsername() == str )
+            {
+                sw = true ;
+                break ;
+            }
+        if ( sw )
+        {
+            buffer = "#On" ;
+        }
+        else
+            buffer = "#Off" ;
+        socketStream << buffer ;
     }
+    else
+    {
+        if ( firstMessage )
+        {
 
-    for ( int i = 0 ; i < num_users ; i ++ )
-        if ( users[i]->getUsername() == buffer )
-            for ( int j = 0 ; j < num_users ; j ++ )
-                if ( users [j]->getSocket() == socket )
-                {
-                    sendMessage( users [i]->getSocket() , users [j]->getUsername().toUtf8() ) ;
-                    //QMessageBox::critical( nullptr , "Server" , "Message" , users[j]->getUsername() , users [i]->getUsername() ) ;
-                    return ;
-                }
+            User* u = new User ( socket , buffer ) ;
+
+            addUser( u ) ;
+
+            firstMessage = false ;
+
+            //QMessageBox::critical( nullptr , "Server" , "firstMessage" , buffer ) ;
+            return ;
+        }
+
+        for ( int i = 0 ; i < num_users ; i ++ )
+            if ( users[i]->getUsername() == buffer )
+                for ( int j = 0 ; j < num_users ; j ++ )
+                    if ( users [j]->getSocket() == socket )
+                    {
+                        sendMessage( users [i]->getSocket() , users [j]->getUsername().toUtf8() ) ;
+                        //QMessageBox::critical( nullptr , "Server" , "Message" , users[j]->getUsername() , users [i]->getUsername() ) ;
+                        return ;
+                    }
+    }
 }
 
 //void Server::readSocket ()

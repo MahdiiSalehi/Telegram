@@ -2,7 +2,6 @@
 #define CHATPAGE_H
 
 #include <QMainWindow>
-#include <QTcpSocket>
 #include <QMessageBox>
 #include <QHostAddress>
 #include <QListWidgetItem>
@@ -53,6 +52,7 @@ private slots:
     void ContactNameLabelOff () ;
 
     void on_C_SendFileButton_clicked();
+
 };
 
 #endif // CHATPAGE_H
