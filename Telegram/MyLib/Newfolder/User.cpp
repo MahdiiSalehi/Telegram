@@ -101,8 +101,12 @@ Pv* User::getPv(int n)
 void User::setCurrentPv(QString str, QTcpSocket* socket)
 {
     QString str2 ;
-    for ( int i = 0 ; str[i] != '(' && str[i] != '\n' ; i ++ )
-        str2 [i] = str [i] ;
+    for ( QChar c : str )
+        if ( c != '(' && c != '\n' )
+            str2 += c ;
+        else
+            break ;
+    QMessageBox::critical( nullptr , "ERROR" , "SE7" ) ;
     for ( int i = 0 ; i < rows ; i ++ )
     {
         if ( pv [i]->contact == str2 )
@@ -110,7 +114,7 @@ void User::setCurrentPv(QString str, QTcpSocket* socket)
             currentPv = i ;
         }
     }
-
+    QMessageBox::critical( nullptr , "ERROR" , "SE8" ) ;
     currentPvState = false ;
 
     QByteArray buffer ("#") ;

@@ -262,11 +262,11 @@ void ChatPage::on_C_ChatList_itemDoubleClicked(QListWidgetItem *item)
 
 void ChatPage::on_C_ContactList_itemClicked(QListWidgetItem *item)
 {   
-    //QMessageBox::critical( nullptr , "ERROR" , "E2" ) ;
+    QMessageBox::critical( nullptr , "ERROR" , "E2" ) ;
     user->setCurrentPv( item->text() , socket ) ;
-    //QMessageBox::critical( nullptr , "ERROR" , "E3" ) ;
+    QMessageBox::critical( nullptr , "ERROR" , "E3" ) ;
     ui->C_ChatList->clear() ;
-    //QMessageBox::critical( nullptr , "ERROR" , "E4" ) ;
+    QMessageBox::critical( nullptr , "ERROR" , "E4" ) ;
     user->ShowMessages( ui->C_ChatList ) ;
     //QMessageBox::critical( nullptr , "ERROR" , "E5" ) ;
     user->getCurrentPv()->seen_messages() ;

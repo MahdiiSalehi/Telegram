@@ -131,7 +131,7 @@ void Pv::ShowLastMessage(QListWidget *lw)
     }
     else
     {
-        lw->addItem( "->" + q.value(0).toString() + '\n' + str ) ;
+        lw->addItem( "<" + q.value(0).toString() + ">" + '\n' + str ) ;
     }
     lw->scrollToBottom() ;
 }

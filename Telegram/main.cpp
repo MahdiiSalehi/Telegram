@@ -5,7 +5,8 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QSqlDatabase>
-#include <chatpage.h>
+//#include "chatpage.h"
+//#include "codetaeed.h"
 /*#include <MyLib/Newfolder/MyLib.h>
 
 MyQSqlDatabase db ;*/
